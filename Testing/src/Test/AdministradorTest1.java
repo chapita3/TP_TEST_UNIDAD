@@ -19,7 +19,7 @@ import org.junit.Test;
 
 public class AdministradorTest1
 {
-    AdministradorTestFixture1 fixture1= new AdministradorTestFixture1();
+    Test.AdministradorTestFixture1 fixture1= new Test.AdministradorTestFixture1();
     
     public AdministradorTest1()
     {
