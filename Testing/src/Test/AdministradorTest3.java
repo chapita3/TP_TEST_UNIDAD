@@ -1,5 +1,7 @@
 package Test;
 
+import AdministradorTestFixture1;
+
 import java.util.Date;
 
 import modelo.Cliente;

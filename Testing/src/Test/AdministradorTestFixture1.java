@@ -16,9 +16,9 @@ import modelo.Tarea;
 public class AdministradorTestFixture1
 {
      public Administrador admin=new Administrador();
-     ArrayList<Tarea> tareas=new ArrayList<Tarea>();
-    ArrayList<Cliente> clientes=new ArrayList<Cliente>();
-    ArrayList<Colaborador> colaboradores=new ArrayList<Colaborador>();
+     public ArrayList<Tarea> tareas = new ArrayList<Tarea>();
+    public ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+    public ArrayList<Colaborador> colaboradores = new ArrayList<Colaborador>();
 
      public AdministradorTestFixture1()
      {
