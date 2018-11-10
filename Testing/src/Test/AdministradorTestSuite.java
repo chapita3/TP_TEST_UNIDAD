@@ -1,7 +1,5 @@
 package Test;
 
-import AdministradorTest1;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
