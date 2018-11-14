@@ -42,7 +42,7 @@ public class AdministradorTestFixture1
          clientes.add(c4);
          Servicio s1= new Servicio("Limpiar","Fijo",100);
          Servicio s2= new Servicio("Cocinar","Por hora",25);
-         Servicio s3= new Servicio("Ordenar","Fijo",50);
+         Servicio s3= new Servicio("Ordenar","Por hora",50);
          this.admin.getBdd().getServicios().add(s1);
          this.admin.getBdd().getServicios().add(s2);
          this.admin.getBdd().getServicios().add(s3);
@@ -50,14 +50,17 @@ public class AdministradorTestFixture1
          Colaborador col2= new Colaborador("Sanchez","sanchez@gmail.com","222222222","222B","2345","Colaborador");
          Colaborador col3= new Colaborador("Guille","guillote@gmail.com","333333333","333C","5555","Colaborador");
          Colaborador col4= new Colaborador("Leonel","leo@gmail.com","333333333","333C","5555","Colaborador");
+         Colaborador col5= new Colaborador("Pipo","leo@gmail.com","333333333","333C","5555","Colaborador");
          this.admin.getBdd().getColaboradores().add(col1);
          this.admin.getBdd().getColaboradores().add(col2);
          this.admin.getBdd().getColaboradores().add(col3);
          this.admin.getBdd().getColaboradores().add(col4);
+         this.admin.getBdd().getColaboradores().add(col5);
          colaboradores.add(col1);
          colaboradores.add(col2);
          colaboradores.add(col3);
          colaboradores.add(col4);
+         colaboradores.add(col5);
          GrupoClientes g1=new GrupoClientes();
          GrupoClientes g2=new GrupoClientes();
          g1.setNombre("grupo1");
@@ -92,14 +95,18 @@ public class AdministradorTestFixture1
          tareas.add(col2.getTareas().get(c2));
         tareas.add(col3.getTareas().get(c3));
         tareas.add(col4.getTareas().get(c2));
-        col1.getTareas().get(c1).setFechainicio(new Date(2018,10,1));
-        col1.getTareas().get(c1).setFechacierre(new Date(2018,10,30));
-        col1.getTareas().get(c1).setEstado(new CerradaState(col1.getTareas().get(c1)));
-        col2.getTareas().get(c2).setFechainicio(new Date(2018,10,1));
-        col2.getTareas().get(c2).setFechacierre(new Date(2018,10,10));
-        col2.getTareas().get(c2).setEstado(new CerradaState(col1.getTareas().get(c2)));
-        col3.getTareas().get(c3).setFechainicio(new Date(2018,11,1));
-        col4.getTareas().get(c2).setFechainicio(new Date(2018,11,1));
+        col1.getTareas().get(c1).setFechainicio(new Date(118,10,1));
+        this.admin.cerrarTarea(col1.getTareas().get(c1), col1);
+        col1.getTareas().get(c1).setFechacierre(new Date(118,10,30));
+        //tareas.get(0).setEstado(new CerradaState(tareas.get(0)));
+        //col1.getTareas().get(c1).setEstado(new CerradaState(col1.getTareas().get(c1)));
+        col2.getTareas().get(c2).setFechainicio(new Date(118,10,1));
+        this.admin.cerrarTarea(col2.getTareas().get(c2), col2);
+        col2.getTareas().get(c2).setFechacierre(new Date(118,10,10));
+        //tareas.get(1).setEstado(new CerradaState(tareas.get(1)));
+        //col2.getTareas().get(c2).setEstado(new CerradaState(col1.getTareas().get(c2)));
+        col3.getTareas().get(c3).setFechainicio(new Date(118,10,1));
+        col4.getTareas().get(c2).setFechainicio(new Date(118,10,1));
      }
 
      public void tearDown()

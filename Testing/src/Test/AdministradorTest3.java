@@ -15,7 +15,7 @@ import org.junit.Test;
 
 public class AdministradorTest3
 {
-    AdministradorTestFixture1 fixture1= new AdministradorTestFixture1();
+    AdministradorTestFixture3 fixture1= new AdministradorTestFixture3();
     
     public AdministradorTest3()
     {
@@ -52,11 +52,11 @@ public class AdministradorTest3
         try
         {
             Cliente c1= new Cliente("Juan","juan@gmail.com","4324234","2121321312","123","grupo1");
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,20);
+            Date d1= new Date(118,10,1);
+            Date d2= new Date(118,10,20);
             String resultado= fixture1.admin.solicitarInformeCliente(c1, d1, d2);
             String mensaje= "Tarea de Servicio | Total horas  | Importe \n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -73,11 +73,11 @@ public class AdministradorTest3
         try
         {
             Colaborador col1= new Colaborador("Pilar","pili@gmail.com","111111111","111A","1234","Colaborador");
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,30);
+            Date d1= new Date(118,10,1);
+            Date d2= new Date(118,10,30);
             String resultado= fixture1.admin.solicitarInformeColaboradorIntervalo(col1, d1, d2);
             String mensaje= "Cliente  |  Tarea de servicio  | Total horas\n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -95,7 +95,7 @@ public class AdministradorTest3
         {
             String resultado= fixture1.admin.solicitarTareasEnCursoColaboradores();
             String mensaje= " Colaborador   |   Cliente  | Servicio  | Inicio    | Estado    | Horas accumuladas | \n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {

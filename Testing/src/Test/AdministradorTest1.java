@@ -56,12 +56,13 @@ public class AdministradorTest1
         try
         {
             Cliente c1= new Cliente("Juan","juan@gmail.com","4324234","2121321312","123","grupo1");
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,20);
-            long horas= (d2.getTime() - d1.getTime())/3600000;
+            Date d1= new Date(118,9,1);
+            Date real1= new Date(118,10,1);
+            Date d2= new Date(118,10,30);
+            long horas= (d2.getTime() - real1.getTime())/3600000;
             String resultado= fixture1.admin.solicitarInformeCliente(c1, d1, d2);
             String mensaje= "Tarea de Servicio | Total horas  | Importe \n" + "Limpiar"+ " " + horas + " " + 100 + "\n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -78,13 +79,14 @@ public class AdministradorTest1
         try
         {
             Cliente c2= new Cliente("Fran","fran@gmail.com","1234234","2134536546","222","grupo1");
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,10);
-            long horas= (d2.getTime() - d1.getTime())/3600000;
+            Date d1= new Date(118,9,1);
+            Date real1= new Date(118,10,1);
+            Date d2= new Date(118,10,10);
+            long horas= (d2.getTime() - real1.getTime())/3600000;
             double costo= (double) horas * 25;
             String resultado= fixture1.admin.solicitarInformeCliente(c2, d1, d2);
             String mensaje= "Tarea de Servicio | Total horas  | Importe \n" + "Cocinar"+ " " + horas + " " + costo + "\n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -101,13 +103,14 @@ public class AdministradorTest1
         try
         {
             Cliente c3= new Cliente("Pedro","pedro@gmail.com","1124234","0123212","443","grupo2");
-            Date d1= new Date(2018,11,1);
+            Date d1= new Date(118,9,1);
             Date d2= new Date();
-            long horas= (d2.getTime() - d1.getTime())/3600000;
+            Date real1=new Date(118,10,1);
+            long horas= (d2.getTime() - real1.getTime())/3600000;
             double costo= (double) horas * 50;
             String resultado= fixture1.admin.solicitarInformeCliente(c3, d1, d2);
             String mensaje= "Tarea de Servicio | Total horas  | Importe \n" + "Cocinar"+ " " + horas + " " + costo + "\n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -124,11 +127,11 @@ public class AdministradorTest1
         try
         {
             Cliente c1= new Cliente("Peter","peter@gmail.com","4324234","2121321312","123","grupo1");
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,20);
+            Date d1= new Date(118,9,1);
+            Date d2= new Date(118,10,20);
             String resultado= fixture1.admin.solicitarInformeCliente(c1, d1, d2);
             String mensaje= "Tarea de Servicio | Total horas  | Importe \n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -145,11 +148,11 @@ public class AdministradorTest1
         try
         {
             Cliente c1= new Cliente("Juan","juan@gmail.com","4324234","2121321312","123","grupo1");
-            Date d1= new Date(2018,9,1);
-            Date d2= new Date(2018,10,20);
+            Date d1= new Date(118,10,10);
+            Date d2= new Date(118,10,20);
             String resultado= fixture1.admin.solicitarInformeCliente(c1, d1, d2);
             String mensaje= "Tarea de Servicio | Total horas  | Importe \n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -167,8 +170,8 @@ public class AdministradorTest1
         try
         {
             Cliente c1= null;
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,20);
+            Date d1= new Date(118,9,1);
+            Date d2= new Date(118,10,20);
             String resultado= fixture1.admin.solicitarInformeCliente(c1, d1, d2);
             fail("No dispara excepcion por cliente null");
         }
@@ -207,12 +210,13 @@ public class AdministradorTest1
         try
         {
             Colaborador col1= new Colaborador("Pilar","pili@gmail.com","111111111","111A","1234","Colaborador");
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,30);
-            long horas= (d2.getTime() - d1.getTime())/3600000;
+            Date d1= new Date(118,9,30);
+            Date real1=new Date(118,10,1);
+            Date d2= new Date(118,10,30);
+            long horas= (d2.getTime() - real1.getTime())/3600000;
             String resultado= fixture1.admin.solicitarInformeColaboradorIntervalo(col1, d1, d2);
-            String mensaje= "Cliente  |  Tarea de servicio  | Total horas\n" + "Juan" + " " + "Limpiar" + " " + horas + "\n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            String mensaje= "Cliente  |  Tarea de servicio  | Total horas\n" + "" + "Juan" + " " + "Limpiar" + " " + horas + "\n";
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -230,12 +234,11 @@ public class AdministradorTest1
         try
         {
             Colaborador col1= new Colaborador("Peter","peter@gmail.com","111111111","111A","1234","Colaborador");
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,20);
-            long horas= (d2.getTime() - d1.getTime())/3600000;
+            Date d1= new Date(118,9,30);
+            Date d2= new Date(118,10,20);
             String resultado= fixture1.admin.solicitarInformeColaboradorIntervalo(col1, d1, d2);
             String mensaje= "Cliente  |  Tarea de servicio  | Total horas\n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -252,12 +255,11 @@ public class AdministradorTest1
         try
         {
             Colaborador col1= new Colaborador("Pilar","pili@gmail.com","111111111","111A","1234","Colaborador");
-            Date d1= new Date(2018,9,1);
-            Date d2= new Date(2018,10,20);
-            long horas= (d2.getTime() - d1.getTime())/3600000;
+            Date d1= new Date(118,10,10);
+            Date d2= new Date(118,10,20);
             String resultado= fixture1.admin.solicitarInformeColaboradorIntervalo(col1, d1, d2);
             String mensaje= "Cliente  |  Tarea de servicio  | Total horas\n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -274,9 +276,8 @@ public class AdministradorTest1
         try
         {
             Colaborador col1= null;
-            Date d1= new Date(2018,9,1);
-            Date d2= new Date(2018,10,20);
-            long horas= (d2.getTime() - d1.getTime())/3600000;
+            Date d1= new Date(118,9,1);
+            Date d2= new Date(118,10,20);
             String resultado= fixture1.admin.solicitarInformeColaboradorIntervalo(col1, d1, d2);
             fail("No dispara excepcion por colaborador null");
         }
@@ -297,7 +298,6 @@ public class AdministradorTest1
             Colaborador col1= new Colaborador("Peter","peter@gmail.com","111111111","111A","1234","Colaborador");
             Date d1= null;
             Date d2= null;
-            long horas= (d2.getTime() - d1.getTime())/3600000;
             String resultado= fixture1.admin.solicitarInformeColaboradorIntervalo(col1, d1, d2);
             fail("No dispara excepcion por fecha null");
         }
@@ -316,13 +316,15 @@ public class AdministradorTest1
     {
         try
         {
-            Date d1= new Date(2018,11,1);
+            Date d1= new Date(118,9,30);
+            Date real1= new Date(118,10,1);
             Date d2= new Date();
-            long horas= (d2.getTime() - d1.getTime())/3600000;
+            long horas= (d2.getTime() - real1.getTime())/3600000;
             String resultado= fixture1.admin.solicitarTareasEnCursoColaboradores();
-            String m1= "Guille" + " " + "Pedro" + " " + "Ordenar" + " " + d1 + " " + "abierta" + " " + horas + "\n";
-            String mensaje= " Colaborador   |   Cliente  | Servicio  | Inicio    | Estado    | Horas accumuladas | \n" + m1;
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            String m1= "Guille" + " " + "Pedro" + " " + "Ordenar" + " " + real1 + " " + "abierta" + " " + horas + "\n";
+            String m2= "Leonel" + " " + "Fran" + " " + "Cocinar" + " " + real1 + " " + "abierta" + " " + horas + "\n";
+            String mensaje= " Colaborador   |   Cliente  | Servicio  | Inicio    | Estado    | Horas accumuladas | \n" + m1 + m2;
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -606,8 +608,8 @@ public class AdministradorTest1
     {
         try
         {
-            int old=fixture1.colaboradores.get(3).getTareas().size();
-            fixture1.admin.crearTarea(fixture1.admin.getBdd().getServicios().get(0), fixture1.clientes.get(3), fixture1.colaboradores.get(3));
+            int old=fixture1.colaboradores.get(4).getTareas().size();
+            fixture1.admin.crearTarea(fixture1.admin.getBdd().getServicios().get(0), fixture1.clientes.get(3), fixture1.colaboradores.get(4));
             assertTrue("No se crea la tarea",fixture1.admin.getBdd().getColaboradores().get(2).getTareas().size()==old+1);
         }
         catch( final Exception e )
@@ -622,10 +624,10 @@ public class AdministradorTest1
     @Test
     public void testCrearTarea2()
     {
-        int old=fixture1.admin.getBdd().getColaboradores().get(1).getTareas().size();
+        int old=fixture1.colaboradores.get(2).getTareas().size();
         try
         {
-            fixture1.admin.crearTarea(fixture1.admin.getBdd().getServicios().get(0), fixture1.admin.getBdd().getClientes().get(2), fixture1.admin.getBdd().getColaboradores().get(1));
+            fixture1.admin.crearTarea(fixture1.admin.getBdd().getServicios().get(0), fixture1.admin.getBdd().getClientes().get(2), fixture1.colaboradores.get(2));
             fail("No lanza excepcion por tarea abierta existente");
         }
         catch( final Exception e )
