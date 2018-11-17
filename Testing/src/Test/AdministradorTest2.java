@@ -54,11 +54,11 @@ public class AdministradorTest2
         try
         {
             Cliente c1= new Cliente("Juan","juan@gmail.com","4324234","2121321312","123","grupo1");
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,20);
+            Date d1= new Date(118,9,1);
+            Date d2= new Date(118,10,20);
             String resultado= fixture1.admin.solicitarInformeCliente(c1, d1, d2);
             String mensaje= "Tarea de Servicio | Total horas  | Importe \n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -76,7 +76,7 @@ public class AdministradorTest2
         {
             String resultado= fixture1.admin.solicitarInformeCliente(null, null, null);
             String mensaje= "Tarea de Servicio | Total horas  | Importe \n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -93,11 +93,11 @@ public class AdministradorTest2
         try
         {
             Colaborador col1= new Colaborador("Pilar","pili@gmail.com","111111111","111A","1234","Colaborador");
-            Date d1= new Date(2018,10,1);
-            Date d2= new Date(2018,10,30);
+            Date d1= new Date(118,9,1);
+            Date d2= new Date(118,10,30);
             String resultado= fixture1.admin.solicitarInformeColaboradorIntervalo(col1, d1, d2);
             String mensaje= "Cliente  |  Tarea de servicio  | Total horas\n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -115,7 +115,7 @@ public class AdministradorTest2
         {
             String resultado= fixture1.admin.solicitarInformeColaboradorIntervalo(null, null, null);
             String mensaje= "Cliente  |  Tarea de servicio  | Total horas\n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -133,7 +133,7 @@ public class AdministradorTest2
         {
             String resultado= fixture1.admin.solicitarTareasEnCursoColaboradores();
             String mensaje= " Colaborador   |   Cliente  | Servicio  | Inicio    | Estado    | Horas accumuladas | \n";
-            assertEquals("Informe incorrecto",resultado,mensaje);
+            assertEquals("Informe incorrecto",mensaje,resultado);
         }
         catch( final Exception e )
         {
@@ -353,50 +353,5 @@ public class AdministradorTest2
         {
             fail("eliminarColaborador no contempla excepcion de colaborador no registrado en bdd");
         }
-    }
-
-    /**
-     * @see modelo.Administrador#crearTarea(modelo.Servicio,modelo.Cliente,modelo.Colaborador)
-     */
-    @Test
-    public void testCrearTarea()
-    {
-        
-    }
-
-    /**
-     * @see modelo.Administrador#eliminarTarea(modelo.Tarea,modelo.Colaborador)
-     */
-    @Test
-    public void testEliminarTarea()
-    {
-        fail("Unimplemented");
-    }
-
-    /**
-     * @see modelo.Administrador#cerrarTarea(modelo.Tarea,modelo.Colaborador)
-     */
-    @Test
-    public void testCerrarTarea()
-    {
-        fail("Unimplemented");
-    }
-
-    /**
-     * @see modelo.Administrador#pausarTarea(modelo.Tarea,modelo.Colaborador)
-     */
-    @Test
-    public void testPausarTarea()
-    {
-        fail("Unimplemented");
-    }
-
-    /**
-     * @see modelo.Administrador#reanudarTarea(modelo.Tarea,modelo.Colaborador)
-     */
-    @Test
-    public void testReanudarTarea()
-    {
-        fail("Unimplemented");
     }
 }
