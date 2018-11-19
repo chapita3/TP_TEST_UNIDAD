@@ -60,7 +60,7 @@ public class UtilidadTest
     }
     /**
      * @see modelo.Utilidad#verificarUsuario(String,String)
-     * Testeando un admin
+     * Testeando buscado admin
      */
     @Test
     public void testVerificarUsuario2() {
@@ -90,7 +90,7 @@ public class UtilidadTest
     }
     /**
      * @see modelo.Utilidad#verificarUsuario(String,String)
-     * Testeando un admin
+     * Testeando con parametros nullos
      */
     @Test
     public void testVerificarUsuario4() {

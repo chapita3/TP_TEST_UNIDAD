@@ -20,5 +20,6 @@ public class UtilidadTestFixture1
 
     public void tearDown()
     {
+        this.utilidad.getBdd().getColaboradores().clear();
     }
 }
